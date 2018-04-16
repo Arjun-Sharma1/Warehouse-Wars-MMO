@@ -1,0 +1,221 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The death alert (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* death Alert Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #87cefa;
+    color: white;
+}
+
+/*Space between table */
+table {
+  border-collapse:separate;
+  border-spacing:8px 8px;
+}
+
+h1 {
+	color: #0074D9;
+	text-shadow: 1px 1px 1px #7FDBFF;
+}
+
+#errorMessage1, #errorMessage2 { display: none; }
+
+h2 {
+	color: #111111;
+	text-shadow: 1px 2px 1px #fff;
+	border: 1px solid #e1e1e1;
+	background: #f4f4f4;
+	border-radius: 4px;
+	padding: 5px 15px;
+	font-size: 18px;
+}
+
+legend {
+	font-weight: bold;
+	font-size: 22px;
+}
+
+#ww {
+	border: 1px solid black;
+}
+#ww tr{ }
+
+#ww tr td {
+	border: 1px solid black;
+}
+
+#legend1{
+	border-spacing: 10px 0;
+}
+
+td img {
+	height: 24px;
+	width: 24px;
+} 
+
+
+.fieldContain{
+	clear: both;
+	margin: 0 auto;
+}
+
+input:invalid { 
+	border: 2px solid #ff0000;
+}
+
+.button {
+	background-color: #4CAF50;
+	border-radius: 4px;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	border-radius: 4px;
+}
+
+.button1 {
+	background-color: white; 
+	border-radius: 4px;
+	color: black; 
+	border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+	background-color: #4CAF50;
+	border-radius: 4px;
+	color: white;
+}
+
+button[disabled=disabled], button:disabled {
+	border-radius: 4px;
+	cursor: not allowed;
+	pointer-events: none;
+	color: #c0c0c0;
+	background-color: white;
+}
+
+.btnAlign {
+	display: inline-block;
+}
+
+/* Side Navigation found on bootstrap website as defaults*/
+.w3-padding{
+	padding:8px 16px!important
+}
+
+.w3-sidenav a,{
+	text-decoration:none!important
+}
+.w3-sidenav a{
+	-webkit-transition:background-color .25s,color .15s,box-shadow .25s,opacity 0.25s,filter 0.25s,border 0.15s;
+	transition:background-color .25s,color .15s,box-shadow .15s,opacity .25s,filter .25s,border .15s
+}
+.w3-sidenav{
+	height:100%;
+	width:0px;
+	background-color:#fff;
+	position:fixed!important;
+	z-index:1;
+	overflow:auto
+}
+.w3-sidenav a{
+	padding:0px
+	display:block
+}
+.w3-sidenav a:hover{
+	background-color:#ccc;color:#000
+}
+.w3-card-4{
+	box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important
+}
+.sidenav {
+    height: 25%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+	background-color:#E6E6E6!important;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding-top: 500px;
+	box-shadow: 10px 0px 5px -5px #999, -6px 0px 5px -5px #999;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #000000;
+	display: block;
+	transition: 0.10s
+}
+	
+/* Sidebar hover */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}

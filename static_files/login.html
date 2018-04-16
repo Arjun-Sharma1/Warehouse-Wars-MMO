@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
+		<title>Computing Science 309 Warehouse Wars</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script language="javascript" src="js/jquery-3.1.1.min.js" > </script>
+		<script type="text/javascript" src="js/helpers.js"></script>
+
+	</head>
+	<body bgcolor="ffffff">
+		<center>
+			<h1>Warehouse Wars</h1>
+			<table>
+				<tr>
+					<td> <div id="login">
+					<form id="Authenticate" action="login.html/submit" method="POST">
+						<fieldset>
+							<legend>Login</legend>
+							<p> <label for="username">User: </label><input type="text" id="username" name="username" required/> </p>
+							<p> <label for="password">Password: </label><input type="password" id="password" name="password" required/>  </p>
+							<h3 id="errorMessage1"> Invalid username or password. </h3>
+							<p> </p>
+							<div class="btnAlign"> <button id="homeRegister" type="button" class="button1" onclick="window.location.href='/register.html';">Register</button></div>
+							<div class="btnAlign"> <button id="login" type="button" class="button1" onclick="authenticateUser();">Login</button></div>
+						</fieldset>
+						</form>
+					 </div></td> 
+				</tr>
+			</table>
+			<body onload="populateHighscores();">
+					<legend>Highscores</legend>
+					<table id="highscores" border='1'>
+	   	 				<tr>
+        					<th>Username</th>
+         					<th>Highscore</th>
+   						</tr>
+					</table>
+			</body>
+		</center>
+	</body>
+</html>

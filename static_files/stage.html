@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
+		<title>Computing Science 309 Warehouse Wars</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script type="text/javascript" src="js/helpers.js"></script>
+		<script language="javascript" src="js/jquery-3.1.1.min.js" > </script>
+		<script type="text/javascript" src="js/clock.js"></script>
+		<script type="text/javascript" src="js/clientSocket.js"></script>
+		
+
+	</head>
+	<body bgcolor="ffffff">
+		<center>
+			<h1 id="title">Warehouse Wars</h1>
+			<!-- Side Navigation button -->
+			<span class='but' id='test' style='font-size:25px;cursor:pointer;position:absolute; top:0; left:0;' onclick='openNav()'>&#9776</span>
+
+			<!-- Side Navigation Menu found on bootstrap website-->
+			<nav id = 'mySidenav' class = 'sidenav w3-sidenav w3-card-4' style = 'padding:0px'>
+				<header style = 'width:260px; display:table; padding:0px; color:#fff;background-color:#87cefa;'>
+				<center>
+					<h3>
+						Menu
+					</h3>
+				</center>
+				</header>
+					<center>
+						<a href='#' class = 'w3-passing' onclick='window.location.replace("http://cslinux.utm.utoronto.ca:10770/stage.html");'>Warehouse Wars</a>
+					</center>
+					<center>
+						<a href='#' class = 'w3-passing' onclick='window.location.replace("http://cslinux.utm.utoronto.ca:10770/account.html");'>Account Settings</a>
+					</center>
+					<center>
+						<a href='#' class = 'w3-passing' onclick='window.location.replace("http://cslinux.utm.utoronto.ca:10770/login.html");'>Logout</a>
+					</center>
+			</nav>
+			<!-- Alert Box for dead -->
+			<div id="deadAlert" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+				  <span class="close">&times;</span>
+				  <h1>Warehouse Warz</h1>
+				</div>
+				  <div id="deadBody" class="modal-body">
+					<p></p>
+					<p>Oh no! You have died!</p>
+				  </div>
+				</div>
+			</div>
+			<table>
+				<tr>
+					<!-- Stage -->
+					<td> <div id="stage"></div></td> 
+					
+					<!-- Game Legend -->
+					<td>
+						<div class="fieldContain">
+							<button id="btnPlayAgain" type="button" class="button1" onclick="playAgain()">Play Again</button>
+							<button id="btnLogOut" type="button" class="button1" onclick="window.location.href='/login.html';">Logout</button>				
+						</div>	
+						<center>
+							<div id="gameLegend">
+								<h2 id="gameLegendTitle">Legend</h2>
+								<table id="legend1">
+									<tr>
+										<td> <img src="icons/blank.gif" id="blankImage" /> </td>
+										<td> <img src="icons/emblem-package-2-24.png" id="boxImage" /> </td>
+										<td> <img src="icons/face-cool-24.png" id="playerImage" /> </td>
+										<td> <img src="icons/friend.png" id="friendImage" /> </td>
+										<td> <img src="icons/face-devil-grin-24.png" id="monsterImage" /> </td>
+										<td> <img src="icons/wall.jpeg" id="wallImage" /> </td>
+									</tr>
+									<tr>
+										<td> Empty <br/> Square </td>
+										<td> Box </td>
+										<td> Player </td>
+										<td> Online <br/> Player </td>
+										<td> Monster </td>
+										<td> Wall </td>
+									</tr>
+									<tr>
+										<td colspan="3">
+											<h4 id="username_display">Username:</h4>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="3">
+											<h4 id="game_score">Score: 0</h4>
+										</td>
+									</tr>
+								</table>
+								<h2 id="gameLegendTitle">Controls</h2>
+								<table id="controls">
+									<tr>
+										<td><img src="icons/north_west.svg" onclick="socket.send(JSON.stringify({'type':'Player', 'x': -1, 'y': -1, 'id':localPlayerId}))" /></td>
+										<td><img src="icons/north.svg" onclick="socket.send(JSON.stringify({'type':'Player', 'x': 0, 'y': -1, 'id':localPlayerId}))"/></td>
+										<td><img src="icons/north_east.svg" onclick="socket.send(JSON.stringify({'type':'Player', 'x': 1, 'y': -1, 'id':localPlayerId}))"/></td>
+									</tr>
+									<tr>
+										<td><img src="icons/west.svg" onclick="socket.send(JSON.stringify({'type':'Player', 'x': -1, 'y': 0, 'id':localPlayerId}))"/></td>
+										<td>&nbsp;</td>
+										<td><img src="icons/east.svg" onclick="socket.send(JSON.stringify({'type':'Player', 'x': 1, 'y': 0, 'id':localPlayerId}))"/></td>
+									</tr>
+									<tr>
+										<td><img src="icons/south_west.svg" onclick="socket.send(JSON.stringify({'type':'Player', 'x': -1, 'y': 1, 'id':localPlayerId}))"/></td>
+										<td><img src="icons/south.svg" onclick="socket.send(JSON.stringify({'type':'Player', 'x': 0, 'y': 1, 'id':localPlayerId}))"/></td>
+										<td><img src="icons/south_east.svg" onclick="socket.send(JSON.stringify({'type':'Player', 'x': 1, 'y': 1, 'id':localPlayerId}))"/></td>
+									</tr>
+								</table>
+						 </div>
+					</center>
+					</td>
+				</tr>
+			</table>
+		</center>
+	</body>
+</html>
