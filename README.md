@@ -15,3 +15,8 @@ The game server was implemented with Websockets and user data was stored using M
 
 ### Running the Game:
 Run install script found in root directory to setup and start running the game as the host.
+
+### Objective:
+Surround each monster with boxes to kill it and rack up points as you progress farther in the game.
+
+<img src="http://g.recordit.co/usz2Lq24VT.gif" width="700" height="500" />
