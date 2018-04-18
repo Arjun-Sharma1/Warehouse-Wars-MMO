@@ -1,4 +1,4 @@
-# Warehouse-Wars-MMORPG
+# Warehouse-Wars-MMO
 
 A Multiplayer game in which users need to strategically trap monsters and avoid death. 
 
