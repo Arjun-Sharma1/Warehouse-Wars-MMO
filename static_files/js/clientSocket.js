@@ -15,7 +15,7 @@ $(function(){
 	playerImageSrc=document.getElementById('playerImage').src;
 	boxImageSrc=document.getElementById('boxImage').src;
 	wallImageSrc=document.getElementById('wallImage').src;
-	socket = new WebSocket("ws://cslinux.utm.utoronto.ca:10771");
+	socket = new WebSocket("ws://localhost:10771");
 	var s='<table>';
 	document.getElementById('username_display').innerText = "Username: "+localUser;
 	//If person didn't log in, send them to login page

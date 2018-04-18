@@ -10,7 +10,7 @@ app.use('/',express.static('static_files')); // this directory has files to be r
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
-})); 
+}));
 
 //redirect to login view
 app.get('/', function (req, res) {
@@ -25,7 +25,7 @@ app.get('/login.html/highscores', function (req, res) {
 			if(docs[i].users != null) data.push(docs[i].users);
 		}
 		res.send(data);
-	}) 
+	})
 })
 
 //Retrieve Player info and authenticate them if correct user and pass
@@ -64,7 +64,7 @@ app.post('/stage.html/updateScore', function (req, res) {
 	if(score === parseInt(score, 10)){
 		db.sharm389_309.update({"users.username":user}, {$addToSet: {"users.scores":score}});
 		db.sharm389_309.find({"users.username":user},function (err, docs) {
-			if(docs[0].users.highscore< score){
+			if(docs[0].users.highscore && docs[0].users.highscore< score){
 				db.sharm389_309.update({"users.username":user}, {$set: {"users.highscore":score}});
 			}
 		})
@@ -86,7 +86,7 @@ app.post('/account.html/submit', function (req, res) {
 			res.status(404).send("Oh uh, something went wrong");
 		}
 	})
-	
+
 })
 
 app.delete('/user', function (req, res) {

@@ -24,7 +24,7 @@ function updateHighscore(){
 	$.ajax({
 		type: "POST",
 		contentType: 'application/json',
-		url: 'http://cslinux.utm.utoronto.ca:10770/stage.html/updateScore',
+		url: 'http://localhost:10770/stage.html/updateScore',
 		datatype: "json",
 		data: json,
 		success: function(data){
@@ -45,7 +45,7 @@ function authenticateUser(){
 		$.ajax({
 			type: "Post",
 			contentType: 'application/json',
-			url: 'http://cslinux.utm.utoronto.ca:10770/login.html/submit',
+			url: 'http://localhost:10770/login.html/submit',
 			datatype: "json",
 			data: json,
 			success: function(data){
@@ -68,7 +68,7 @@ function registerUser(){
 		$.ajax({
 			type: "Post",
 			contentType: 'application/json',
-			url: 'http://cslinux.utm.utoronto.ca:10770/register.html/submit',
+			url: 'http://localhost:10770/register.html/submit',
 			datatype: "json",
 			data: json,
 			success: function(data){
@@ -90,7 +90,7 @@ function changeUserPass(){
 		$.ajax({
 			type: "Post",
 			contentType: 'application/json',
-			url: 'http://cslinux.utm.utoronto.ca:10770/account.html/submit',
+			url: 'http://localhost:10770/account.html/submit',
 			datatype: "json",
 			data: json,
 			success: function(data){
@@ -151,7 +151,7 @@ function playAgain(){
 //Poplate highscores for front end login page
 function populateHighscores(){
 	var tableRef = document.getElementById('highscores');
-	var url = 'http://cslinux.utm.utoronto.ca:10770/login.html/highscores';	
+	var url = 'http://localhost:10770/login.html/highscores';	
 	var toAdd = "";
 	console.log("aaa");
     $.getJSON( url, function( data ) {
